@@ -211,7 +211,7 @@ namespace Tests
         //// Test case = 2.1 Given 1 yard and Feet when compares should return  equals length
         //// </summary
         [Test]
-      public void given1YardAnd3Feet_WhenCompared_ShouldReturnEqualLength()
+      public void Given1YardAnd3Feet_WhenCompared_ShouldReturnEqualLength()
         {
             Length yard = new Length(Length.Unit.YARD, 1.0);
             Length feet = new Length(Length.Unit.FEET, 3.0);
@@ -222,12 +222,23 @@ namespace Tests
         //// Test case = 2.2 Given 1 yard and 1 Feet when compares should return  not equals length
         //// </summary
         [Test]
-        public void given1FeetAnd1Yard_WhenCompared_ShouldReturnNotEqualLength()
+        public void Given1FeetAnd1Yard_WhenCompared_ShouldReturnNotEqualLength()
         {
             Length feet = new Length(Length.Unit.FEET, 1.0);
             Length yard = new Length(Length.Unit.YARD, 1.0);
             bool compareCheck = feet.compare(yard);
             Assert.IsFalse(compareCheck);
+        }
+        [Test]
+        //// <summary>
+        //// Test case = 2.3 Given 1 yard and 36 when compares should return equals length
+        //// </summary
+        public void Given1YardAnd36Inch_WhenCompared_ShouldReturnEqualLength()
+        {
+            Length yard = new Length(Length.Unit.YARD, 1.0);
+            Length inch = new Length(Length.Unit.INCH, 36.0);
+            bool compareCheck = yard.compare(inch);
+            Assert.IsTrue(compareCheck);
         }
     }
 }
