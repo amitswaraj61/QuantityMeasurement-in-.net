@@ -185,12 +185,26 @@ namespace Tests
             bool compareCheck = inch1.compare(inch2);
             Assert.IsFalse(compareCheck);
         }
+        //// <summary>
+        //// Test case = 1.16 Given 1 inch and 12inch  when compares should return  equals length
+        //// </summary
         [Test]
         public void Given1FeetAnd12Inch_WhenCompared_ShouldReturnEqualLength()
         {
             Length feet = new Length(Length.Unit.FEET, 1.0);
             Length inch = new Length(Length.Unit.INCH, 12.0);
             bool compareCheck = feet.compare(inch);
+            Assert.IsTrue(compareCheck);
+        }
+        //// <summary>
+        //// Test case = 1.17 Given 12 inch and 12Feet when compares should return  equals length
+        //// </summary
+        [Test]
+        public void Given12InchAnd1Feet_WhenCompared_ShouldReturnEqualLength()
+        {
+            Length inch = new Length(Length.Unit.INCH, 12.0);
+            Length feet = new Length(Length.Unit.FEET, 1.0);
+            bool compareCheck = inch.compare(feet);
             Assert.IsTrue(compareCheck);
         }
     }

@@ -67,6 +67,10 @@ namespace QuantityMeasurement
             {
                 return this.value * FEET_TO_INCH.CompareTo(that.value) == 0;
             }
+            if (this.unit.Equals(Unit.INCH) && that.unit.Equals(Unit.FEET))
+            {
+                return (this.value / FEET_TO_INCH).CompareTo(that.value) == 0;
+            }
             return false;
         }
     }
