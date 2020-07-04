@@ -31,7 +31,11 @@ using System.Text;
         override
         public bool Equals(object obj)
         {
-            Inch inch = (Inch)obj;
+            if (obj == null)
+            {
+                return false;
+            }
+                Inch inch = (Inch)obj;
             return inch.value == this.value;
         }
     }
