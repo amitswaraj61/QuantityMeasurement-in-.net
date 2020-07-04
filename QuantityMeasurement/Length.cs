@@ -18,11 +18,15 @@ namespace QuantityMeasurement
         //// <summary>
         //// Create Enum constants
         //// </summary>
-        public enum Unit { FEET ,INCH}
+        public enum Unit { FEET ,INCH , YARD}
         /// <summary>
-        //// Create Enum constants
+        //// convert value feet to inch declare global
         //// </summary>
         public const double FEET_TO_INCH = 12.0;
+        /// <summary>
+        //// convert value yard to inch declare global
+        //// </summary>
+        public const double YARD_TO_INCH = 36.0;
         //// <summary>
         //// declare global variable for double value
         //// </summary>
@@ -70,6 +74,10 @@ namespace QuantityMeasurement
             if (this.unit.Equals(Unit.INCH) && that.unit.Equals(Unit.FEET))
             {
                 return (this.value / FEET_TO_INCH).CompareTo(that.value) == 0;
+            }
+            if (this.unit.Equals(Unit.YARD) && that.unit.Equals(Unit.FEET))
+            {
+                return (this.value * YARD_TO_INCH).CompareTo(that.value*FEET_TO_INCH) == 0;
             }
             return false;
         }
