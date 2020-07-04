@@ -22,7 +22,7 @@ namespace QuantityMeasurement
         /// <summary>
         //// Create Enum constants
         //// </summary>
-        public const double feetTOInch = 12.0;
+        public const double FEET_TO_INCH = 12.0;
         //// <summary>
         //// declare global variable for double value
         //// </summary>
@@ -65,7 +65,7 @@ namespace QuantityMeasurement
 
             if (this.unit.Equals(Unit.FEET) && that.unit.Equals(Unit.INCH))
             {
-                return this.value * feetTOInch.CompareTo(that.value) == 0;
+                return this.value * FEET_TO_INCH.CompareTo(that.value) == 0;
             }
             return false;
         }
