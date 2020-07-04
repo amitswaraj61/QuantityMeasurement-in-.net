@@ -7,6 +7,7 @@ namespace Tests
 {
     using NUnit.Framework;
     using QuantityMeasurement;
+    using System;
 
     //// <summary>
     //// Create QuantityMeasurementTestsClass
@@ -107,6 +108,18 @@ namespace Tests
             Feet feet2 = feet1;
             bool isEqual = feet1.Equals(feet2);
             Assert.IsTrue(isEqual);
+        }
+        //// <summary>
+        //// Test case = 1.10 Given 1 Feet and 1 with same type should return true
+        //// </summary>
+        [Test]
+        public void GivenFeetAndFeet_WhenSameType_ShouldReturnEqual()
+        {
+            Feet feet1 = new Feet(1.0);
+            Feet feet2 = new Feet(1.0);
+            Type type1 = feet1.GetType();
+            Type type2 = feet2.GetType();
+            Assert.AreEqual(type1, type2);
         }
     }
 }
