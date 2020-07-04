@@ -61,7 +61,18 @@ using QuantityMeasurement;
         {
             Feet feet1 = new Feet(1.0);
             Feet feet2 = null;
-            bool isEqual = feet1.Compare(feet2);
+            bool isEqual = feet1.Equals(feet2);
+            Assert.IsFalse(isEqual);
+        }
+        //// <summary>
+        //// Test case = 1.6 Given null and 1 feet should return not equal
+        //// </summary>
+        [Test]
+        public void Givennulland1Feet_WhenOneNull_ShouldReturnNotEqual()
+        {
+            Feet feet1 = null;
+            Feet feet2 = new Feet(1.0);
+            bool isEqual = feet2.Equals(feet1);
             Assert.IsFalse(isEqual);
         }
     }

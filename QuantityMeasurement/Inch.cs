@@ -29,7 +29,7 @@ using System.Text;
         //// override method to compare two objects
         //// </summary>
         override
-        public bool Compare(object obj)
+        public bool Equals(object obj)
         {
             Inch inch = (Inch)obj;
             return inch.value == this.value;
