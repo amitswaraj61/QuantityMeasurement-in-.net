@@ -20,8 +20,8 @@ namespace Tests
         [Test]
         public void Given0FeetAnd0Feet_ShouldReturnEqual()
         {
-            Feet feet1 = new Feet(0.0);
-            Feet feet2 = new Feet(0.0);
+            Length feet1 = new Length(Length.Unit.FEET, 0.0);
+            Length feet2 = new Length(Length.Unit.FEET,0.0);
             Assert.AreEqual(feet1, feet2);
         }
         //// <summary>
@@ -30,8 +30,8 @@ namespace Tests
         [Test]
         public void Given0FeetAnd1Feet_ShouldReturnNotEqual()
         {
-            Feet feet1 = new Feet(0.0);
-            Feet feet2 = new Feet(1.0);
+            Length feet1 = new Length(Length.Unit.FEET, 0.0);
+            Length feet2 = new Length(Length.Unit.FEET, 1.0);
             Assert.AreNotEqual(feet1, feet2);
         }
         //// <summary>
@@ -40,8 +40,8 @@ namespace Tests
         [Test]
         public void Given0InchAnd0Inch_ShouldReturnEqual()
         {
-            Inch inch1 = new Inch(0.0);
-            Inch inch2 = new Inch(0.0);
+            Length inch1 = new Length(Length.Unit.INCH,0.0);
+            Length inch2 = new Length(Length.Unit.INCH, 0.0);
             Assert.AreEqual(inch1, inch2);
         }
         //// <summary>
@@ -50,8 +50,8 @@ namespace Tests
         [Test]
         public void Given0InchAnd1Inch_ShouldReturnNotEqual()
         {
-            Inch inch1 = new Inch(0.0);
-            Inch inch2 = new Inch(1.0);
+            Length inch1 = new Length(Length.Unit.INCH, 0.0);
+            Length inch2 = new Length(Length.Unit.INCH, 1.0);
             Assert.AreNotEqual(inch1, inch2);
         }
         //// <summary>
@@ -60,8 +60,8 @@ namespace Tests
         [Test]
         public void Given1FeetAndNull_WhenOneNull_ShouldReturnNotEqual()
         {
-            Feet feet1 = new Feet(1.0);
-            Feet feet2 = null;
+            Length feet1 = new Length(Length.Unit.FEET,1.0);
+            Length feet2 = null;
             bool isEqual = feet1.Equals(feet2);
             Assert.IsFalse(isEqual);
         }
@@ -71,8 +71,8 @@ namespace Tests
         [Test]
         public void Givennulland1Feet_WhenOneNull_ShouldReturnNotEqual()
         {
-            Feet feet1 = null;
-            Feet feet2 = new Feet(1.0);
+            Length feet1 = null;
+            Length feet2 = new Length(Length.Unit.FEET,1.0);
             bool isEqual = feet2.Equals(feet1);
             Assert.IsFalse(isEqual);
         }
@@ -82,8 +82,8 @@ namespace Tests
         [Test]
         public void Given1InchAndNull_WhenOneNull_ShouldReturnNotEqual()
         {
-            Inch inch1 = new Inch(1.0);
-            Inch inch2 = null;
+            Length inch1 = new Length(Length.Unit.INCH, 1.0);
+            Length inch2 = null;
             bool isEqual = inch1.Equals(inch2);
             Assert.IsFalse(isEqual);
         }
@@ -93,8 +93,8 @@ namespace Tests
         [Test]
         public void GivenNullInchAnd1inch_WhenOneNull_ShouldReturnNotEqual()
         {
-            Inch inch1 = null;
-            Inch inch2 = new Inch(1.0);
+            Length inch1 = null;
+            Length inch2 = new Length(Length.Unit.INCH, 1.0);
             bool isEqual = inch2.Equals(inch1);
             Assert.IsFalse(isEqual);
         }
@@ -104,8 +104,8 @@ namespace Tests
         [Test]
         public void GivenFeetAndFeet_WhenSameReference_ShouldReturnTrue()
         {
-            Feet feet1 = new Feet(0.0);
-            Feet feet2 = feet1;
+            Length feet1 = new Length(Length.Unit.FEET,1.0);
+            Length feet2 = feet1;
             bool isEqual = feet1.Equals(feet2);
             Assert.IsTrue(isEqual);
         }
@@ -115,8 +115,8 @@ namespace Tests
         [Test]
         public void GivenFeetAndFeet_WhenSameType_ShouldReturnEqual()
         {
-            Feet feet1 = new Feet(1.0);
-            Feet feet2 = new Feet(1.0);
+            Length feet1 = new Length(Length.Unit.FEET,1.0);
+            Length feet2 = new Length(Length.Unit.FEET,1.0);
             Type type1 = feet1.GetType();
             Type type2 = feet2.GetType();
             Assert.AreEqual(type1, type2);
@@ -127,8 +127,8 @@ namespace Tests
         [Test]
         public void Given2FeetAnd2Feet_WhenEquals_ShouldReturnEqual()
         {
-            Feet feet1 = new Feet(2.0);
-            Feet feet2 = new Feet(2.0);
+            Length feet1 = new Length(Length.Unit.FEET,2.0);
+            Length feet2 = new Length(Length.Unit.FEET,2.0);
             Assert.AreEqual(feet1, feet2);
         }
     }

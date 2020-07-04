@@ -13,17 +13,26 @@ namespace QuantityMeasurement
     //// <summary>
     //// Create Feet Class
     //// </summary>
-    public class Feet
+    public class Length
     {
+        //// <summary>
+        //// Create Enum constants
+        //// </summary>
+        public enum Unit { FEET ,INCH}
         //// <summary>
         //// declare global variable for double value
         //// </summary>
-        private double value;
+        public double value;
+        //// <summary>
+        //// declare global variable for double value
+        //// </summary>
+        public Unit unit;
         //// <summary>
         //// Create Parameterized Constructor
         //// </summary>
-        public Feet(double value)
+        public Length(Unit unit ,double value)
         {
+            this.unit = unit;
             this.value = value;
         }
         //// <summary>
@@ -36,8 +45,8 @@ namespace QuantityMeasurement
             {
                 return false;
             }
-            Feet feet = (Feet)obj;
-            return feet.value == value;
+            Length length = (Length)obj;
+            return length.value == value && unit == length.unit; ;
         }
     }
 }
