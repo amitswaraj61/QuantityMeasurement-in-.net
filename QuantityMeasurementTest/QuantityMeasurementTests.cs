@@ -5,10 +5,10 @@
 //-----------------------------------------------------------------------
 namespace Tests
 {
-using NUnit.Framework;
-using QuantityMeasurement;
-    
-   //// <summary>
+    using NUnit.Framework;
+    using QuantityMeasurement;
+
+    //// <summary>
     //// Create QuantityMeasurementTestsClass
     //// </summary>
     public class QuantityMeasurementTests
@@ -17,7 +17,7 @@ using QuantityMeasurement;
         //// Test case = 1.1 Given 0 feet and 0 feet should return equal
         //// </summary>
         [Test]
-    public void Given0FeetAnd0Feet_ShouldReturnEqual()
+        public void Given0FeetAnd0Feet_ShouldReturnEqual()
         {
             Feet feet1 = new Feet(0.0);
             Feet feet2 = new Feet(0.0);
@@ -41,7 +41,7 @@ using QuantityMeasurement;
         {
             Inch inch1 = new Inch(0.0);
             Inch inch2 = new Inch(0.0);
-            Assert.AreEqual(inch1,inch2);
+            Assert.AreEqual(inch1, inch2);
         }
         //// <summary>
         //// Test case = 1.4 Given 0 inch and 1 inch should return  equal
@@ -94,8 +94,20 @@ using QuantityMeasurement;
         {
             Inch inch1 = null;
             Inch inch2 = new Inch(1.0);
-           bool isEqual = inch2.Equals(inch1);
+            bool isEqual = inch2.Equals(inch1);
             Assert.IsFalse(isEqual);
+        }
+        //// <summary>
+        //// Test case = 1.9 Given 1 Feet and reference of feet should return  equal
+        //// </summary>
+        [Test]
+        public void GivenFeetAndFeet_WhenSameReference_ShouldReturnTrue()
+        {
+            Feet feet1 = new Feet(0.0);
+            Feet feet2 = feet1;
+            bool isEqual = feet1.Equals(feet2);
+            Assert.IsTrue(isEqual);
         }
     }
 }
+  
