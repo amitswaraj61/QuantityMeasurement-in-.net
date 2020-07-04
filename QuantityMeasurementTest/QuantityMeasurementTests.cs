@@ -53,6 +53,17 @@ using QuantityMeasurement;
             Inch inch2 = new Inch(1.0);
             Assert.AreNotEqual(inch1, inch2);
         }
+        //// <summary>
+        //// Test case = 1.5 Given 1 feet and null should return not equal
+        //// </summary>
+        [Test]
+        public void Given1FeetAndNull_WhenOneNull_ShouldReturnNotEqual()
+        {
+            Feet feet1 = new Feet(1.0);
+            Feet feet2 = null;
+            bool isEqual = feet1.Compare(feet2);
+            Assert.IsFalse(isEqual);
+        }
     }
 }
 

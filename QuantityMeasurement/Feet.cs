@@ -32,8 +32,12 @@ namespace QuantityMeasurement
         override
         public bool Equals(object obj)
         {
+            if (obj == null)
+            {
+                return false;
+            }
             Feet feet = (Feet)obj;
-            return feet.value == this.value;
+            return feet.value == value;
         }
     }
 }
