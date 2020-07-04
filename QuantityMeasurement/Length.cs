@@ -19,6 +19,10 @@ namespace QuantityMeasurement
         //// Create Enum constants
         //// </summary>
         public enum Unit { FEET ,INCH}
+        /// <summary>
+        //// Create Enum constants
+        //// </summary>
+        public const double feetTOInch = 12.0;
         //// <summary>
         //// declare global variable for double value
         //// </summary>
@@ -51,9 +55,19 @@ namespace QuantityMeasurement
         //// <summary>
         ////  method to compare two objects
         //// </summary>
-        public bool compare(Length inch1)
+        public bool compare(Length that)
         {
-            return true;
+
+            if (this.unit.Equals(Unit.FEET) && that.unit.Equals(Unit.FEET) || this.unit.Equals(Unit.INCH) && that.unit.Equals(Unit.INCH))
+            {
+                return this.value.CompareTo(that.value) == 0;
+            }
+
+            if (this.unit.Equals(Unit.FEET) && that.unit.Equals(Unit.INCH))
+            {
+                return this.value * feetTOInch.CompareTo(that.value) == 0;
+            }
+            return false;
         }
     }
 }

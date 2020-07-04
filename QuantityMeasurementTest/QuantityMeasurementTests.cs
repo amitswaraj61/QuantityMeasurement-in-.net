@@ -174,5 +174,16 @@ namespace Tests
             bool compareCheck = inch1.compare(inch2);
             Assert.IsTrue(compareCheck);
         }
+        //// <summary>
+        //// Test case = 1.15 Given 1 inch and 2inch  when compares should return  not equals length
+        //// </summary>
+        [Test]
+        public void Given1InchAnd2Inch_WhenCompared_ShouldReturnFalse()
+        {
+            Length inch1 = new Length(Length.Unit.INCH, 1.0);
+            Length inch2 = new Length(Length.Unit.INCH, 2.0);
+            bool compareCheck = inch1.compare(inch2);
+            Assert.IsFalse(compareCheck);
+        }
     }
 }
