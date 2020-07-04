@@ -86,7 +86,16 @@ using QuantityMeasurement;
             bool isEqual = inch1.Equals(inch2);
             Assert.IsFalse(isEqual);
         }
+        //// <summary>
+        //// Test case = 1.8 Given null inch and 1 inch should return not equal
+        //// </summary>
+        [Test]
+        public void GivenNullInchAnd1inch_WhenOneNull_ShouldReturnNotEqual()
+        {
+            Inch inch1 = null;
+            Inch inch2 = new Inch(1.0);
+           bool isEqual = inch2.Equals(inch1);
+            Assert.IsFalse(isEqual);
+        }
     }
 }
-
-
