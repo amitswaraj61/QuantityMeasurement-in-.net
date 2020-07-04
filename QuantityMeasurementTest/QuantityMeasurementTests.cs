@@ -142,7 +142,7 @@ namespace Tests
             Assert.AreNotEqual(feet1, inch1);
         }
         //// <summary>
-        //// Test case = 1.13 Given 0 Feet and  inch when equals should return  equals length
+        //// Test case = 1.13 Given 0 Feet and  inch when compares should return  equals length
         //// </summary>
         [Test]
         public void Given0FeetAnd0Inch_ShouldReturnTrue()
@@ -150,6 +150,17 @@ namespace Tests
             Length feet1 = new Length(Length.Unit.FEET, 0.0);
             Length inch1 = new Length(Length.Unit.INCH, 0.0);
             bool compareCheck = feet1.compare(inch1);
+            Assert.IsTrue(compareCheck);
+        }
+        //// <summary>
+        //// Test case = 1.13 Given 1 Feet and   when compares should return  equals length
+        //// </summary>
+        [Test]
+        public void Given1FeetAnd1Feet_WhenCompared_ShouldReturnTrue()
+        {
+            Length feet1 = new Length(Length.Unit.FEET, 1.0);
+            Length feet2 = new Length(Length.Unit.FEET, 1.0);
+            bool compareCheck = feet1.compare(feet2);
             Assert.IsTrue(compareCheck);
         }
     }
