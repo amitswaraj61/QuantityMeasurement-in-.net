@@ -131,6 +131,15 @@ namespace Tests
             Length feet2 = new Length(Length.Unit.FEET,2.0);
             Assert.AreEqual(feet1, feet2);
         }
+        //// <summary>
+        //// Test case = 1.12 Given 1 Feet and 1 inch when equals should return not equals
+        //// </summary>
+        [Test]
+        public void Given1FeetAnd1Inch_WhenEquals_ShouldReturnNotEqual()
+        {
+            Length feet1 = new Length(Length.Unit.FEET, 1.0);
+            Length inch1 = new Length(Length.Unit.INCH, 1.0);
+            Assert.AreNotEqual(feet1, inch1);
+        }
     }
 }
-  
