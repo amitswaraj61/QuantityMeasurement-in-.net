@@ -1,19 +1,18 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="QuantityMeasurement.cs" company="BridgeLabz">
+// <copyright file="Inch.cs" company="BridgeLabz">
 // Copyright (c) 2020 All Rights Reserved
 // </copyright>
 //-----------------------------------------------------------------------
-
 namespace QuantityMeasurement
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+ using System;
+using System.Collections.Generic;
+using System.Text;
 
     //// <summary>
-    //// Create Feet Class
+    //// Create Inch Class
     //// </summary>
-    public class Feet
+    public class Inch
     {
         //// <summary>
         //// declare global variable for double value
@@ -22,7 +21,7 @@ namespace QuantityMeasurement
         //// <summary>
         //// Create Parameterized Constructor
         //// </summary>
-        public Feet(double value)
+        public Inch(double value)
         {
             this.value = value;
         }
@@ -32,8 +31,8 @@ namespace QuantityMeasurement
         override
         public bool Equals(object obj)
         {
-            Feet feet = (Feet)obj;
-            return feet.value == this.value;
+            Inch inch = (Inch)obj;
+            return inch.value == this.value;
         }
     }
 }
