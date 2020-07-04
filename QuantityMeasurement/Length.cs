@@ -87,6 +87,10 @@ namespace QuantityMeasurement
             {
                 return (this.value).CompareTo(that.value * YARD_TO_INCH) == 0;
             }
+            if (this.unit.Equals(Unit.FEET) && that.unit.Equals(Unit.YARD))
+            {
+                return (this.value * FEET_TO_INCH).CompareTo(that.value * YARD_TO_INCH) == 0;
+            }
             return false;
         }
     }

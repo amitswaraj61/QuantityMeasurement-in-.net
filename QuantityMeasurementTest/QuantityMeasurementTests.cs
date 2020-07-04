@@ -251,6 +251,17 @@ namespace Tests
             bool compareCheck = inch.compare(yard);
             Assert.IsTrue(compareCheck);
         }
+        //// <summary>
+        //// Test case = 2.5 Given 3 feet and 1 yard when compares should return equals length
+        //// </summary
+        [Test]
+        public void Given3FeetAnd1Yard_WhenCompared_ShouldReturnEqualLength()
+        {
+            Length yard = new Length(Length.Unit.YARD, 1.0);
+            Length feet = new Length(Length.Unit.FEET, 3.0);
+            bool compareCheck = yard.compare(feet);
+            Assert.IsTrue(compareCheck);
+        }
     }
 }
 
