@@ -43,6 +43,16 @@ using QuantityMeasurement;
             Inch inch2 = new Inch(0.0);
             Assert.AreEqual(inch1,inch2);
         }
+        //// <summary>
+        //// Test case = 1.4 Given 0 inch and 1 inch should return  equal
+        //// </summary>
+        [Test]
+        public void Given0InchAnd1Inch_ShouldReturnNotEqual()
+        {
+            Inch inch1 = new Inch(0.0);
+            Inch inch2 = new Inch(1.0);
+            Assert.AreNotEqual(inch1, inch2);
+        }
     }
 }
 
