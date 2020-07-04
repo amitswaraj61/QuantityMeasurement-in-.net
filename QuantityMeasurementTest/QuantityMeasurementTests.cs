@@ -121,6 +121,16 @@ namespace Tests
             Type type2 = feet2.GetType();
             Assert.AreEqual(type1, type2);
         }
+        //// <summary>
+        //// Test case = 1.11 Given 2 Feet and 2 Feet with same type should return true
+        //// </summary>
+        [Test]
+        public void Given2FeetAnd2Feet_WhenEquals_ShouldReturnEqual()
+        {
+            Feet feet1 = new Feet(2.0);
+            Feet feet2 = new Feet(2.0);
+            Assert.AreEqual(feet1, feet2);
+        }
     }
 }
   
