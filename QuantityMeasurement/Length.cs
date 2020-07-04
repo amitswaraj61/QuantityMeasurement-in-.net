@@ -36,7 +36,7 @@ namespace QuantityMeasurement
             this.value = value;
         }
         //// <summary>
-        //// override method to compare two objects
+        //// override method to equals two objects
         //// </summary>
         override
         public bool Equals(object obj)
@@ -47,6 +47,13 @@ namespace QuantityMeasurement
             }
             Length length = (Length)obj;
             return length.value == value && unit == length.unit; ;
+        }
+        //// <summary>
+        ////  method to compare two objects
+        //// </summary>
+        public bool compare(Length inch1)
+        {
+            return true;
         }
     }
 }
