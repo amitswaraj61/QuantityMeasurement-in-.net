@@ -397,7 +397,7 @@ namespace Tests
             Assert.AreEqual(2.0, addedResult);
         }
         //// <summary>
-        //// Test case = 7.1 Given 1 Kg and 1000 grams when Compared should return equal length
+        //// Test case = 7.1 Given 1 Kg and 1000 grams when Compared should return equal kgs
         //// </summary
         [Test]
         public void Given1KgAnd1000Grams_WhenCompared_ShouldReturnEqualLength()
@@ -407,8 +407,9 @@ namespace Tests
             bool compareCheck = length.Compare(kg, grams);
             Assert.IsTrue(compareCheck);
         }
+
         //// <summary>
-        //// Test case = 7.2 Given 1 Tonne and 1000 kgs when Compared should return equal length
+        //// Test case = 7.2 Given 1 Tonne and 1000 kgs when Compared should return equal kgs
         //// </summary
         [Test]
         public void Given1TonneAnd1000Kgs_WhenCompared_ShouldReturnEqual()
@@ -417,6 +418,18 @@ namespace Tests
             Length kgs = new Length(Length.Unit.KG, 1000.0);
             bool compareCheck = length.Compare(tonne, kgs);
             Assert.IsTrue(compareCheck);
+        }
+
+        //// <summary>
+        //// Test case = 7.3 Given 1 Tonne and 1000 gm when addtion should return 1001 kg
+        //// </summary
+        [Test]
+        public void Given1TonneAnd1000Gm_WhenAddition_ShouldReturn1001Kg()
+        {
+            Length tonne = new Length(Length.Unit.TONNE, 1.0);
+            Length gm = new Length(Length.Unit.GRAM, 1000.0);
+            double addedResult = length.Add(tonne, gm);
+            Assert.AreEqual(1001, addedResult, 0.0);
         }
     }
 }
