@@ -337,5 +337,17 @@ namespace Tests
             double addedResult = length.Add(feet1, feet2);
             Assert.AreEqual(24, addedResult);
         }
+
+        //// <summary>
+        //// Test case = 4.4 Given 2 inch and 2.5 cm when Addition should return 3 inch
+        //// </summary
+        [Test]
+        public void Given2InchAnd2nd5Cm_WhenAddition_ShouldReturn3Inch()
+        {
+            Length inch1 = new Length(Length.Unit.INCH, 2.0);
+            Length cm1 = new Length(Length.Unit.CENTIMETER, 2.5);
+            double addedResult = length.Add(inch1, cm1);
+            Assert.AreEqual(3, addedResult, 0.0);
+        }
     }
 }
