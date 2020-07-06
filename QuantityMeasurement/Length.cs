@@ -18,7 +18,7 @@ namespace QuantityMeasurement
         //// <summary>
         //// Create Enum constants
         //// </summary>
-        public enum Unit { FEET, INCH, YARD , CENTIMETER }
+        public enum Unit { FEET, INCH, YARD , CENTIMETER , GALLON , LITRE , MILLIMETER }
 
 
         //// <summary>
@@ -60,6 +60,12 @@ namespace QuantityMeasurement
                     return 36.0;
                 case Unit.CENTIMETER:
                     return 0.4;
+                case Unit.GALLON:
+                    return 3780.0;
+                case Unit.LITRE:
+                    return 1000.0;
+                case Unit.MILLIMETER:
+                    return 1.0;
             }
             return 0;
         }

@@ -349,5 +349,17 @@ namespace Tests
             double addedResult = length.Add(inch1, cm1);
             Assert.AreEqual(3, addedResult, 0.0);
         }
+
+        //// <summary>
+        //// Test case = 5.1 Given 1 Gallon and 3n78 litre when compared should return equal length
+        //// </summary
+        [Test]
+        public void Given1GallonAnd3n78Litres_WhenCompared_ShouldReturnEqualLength()
+        {
+            Length gallon1 = new Length(Length.Unit.GALLON, 1.0);
+            Length litre = new Length(Length.Unit.LITRE, 3.78);
+            bool compareCheck = length.Compare(gallon1, litre);
+            Assert.IsTrue(compareCheck);
+        }
     }
 }
