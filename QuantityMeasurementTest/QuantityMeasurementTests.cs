@@ -396,5 +396,16 @@ namespace Tests
             double addedResult = litre.Add(litre, ml);
             Assert.AreEqual(2.0, addedResult);
         }
+        //// <summary>
+        //// Test case = 7.1 Given 1 Kg and 1000 grams when Compared should return equal length
+        //// </summary
+        [Test]
+        public void Given1KgAnd1000Grams_WhenCompared_ShouldReturnEqualLength()
+        {
+            Length kg = new Length(Length.Unit.KG, 1.0);
+            Length grams = new Length(Length.Unit.GRAM, 1000.0);
+            bool compareCheck = length.Compare(kg, grams);
+            Assert.IsTrue(compareCheck);
+        }
     }
 }
