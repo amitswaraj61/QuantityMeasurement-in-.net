@@ -98,11 +98,21 @@ namespace QuantityMeasurement
         }
         //// <summary>
         //// Overriding GetHashCode Method.
-       //// </summary>
+        /// </summary>
         //// <returns></returns>
         public override int GetHashCode()
         {
             return base.GetHashCode();
+        }
+
+        //// <summary>
+        //// Method to add two units
+        /// </summary>
+        public double Add(Length firstUnit, Length secondUnit)
+        {
+            double baseValue1 = GetUnitConversion(firstUnit.unit);
+            double baseValue2 = GetUnitConversion(secondUnit.unit);
+            return Math.Round(firstUnit.value * baseValue1) + Math.Round(secondUnit.value * baseValue2);
         }
     }
 }

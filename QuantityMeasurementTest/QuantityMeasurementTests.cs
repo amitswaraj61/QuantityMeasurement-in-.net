@@ -301,5 +301,17 @@ namespace Tests
             bool compareCheck = length.Compare(inch, cm);
             Assert.IsTrue(compareCheck);
         }
+
+        //// <summary>
+        //// Test case = 4.1 Given 2 inch and 2 inch when compares should return 4 inch
+        //// </summary
+        [Test]
+        public void Given2InchAnd2Inch_WhenAddition_ShouldReturn4Inch()
+        {
+            Length inch1 = new Length(Length.Unit.INCH, 2.0);
+            Length inch2 = new Length(Length.Unit.INCH, 2.0);
+            double inchAdded = length.Add(inch1, inch2);
+            Assert.AreEqual(4.0, inchAdded);
+        }
     }
 }
