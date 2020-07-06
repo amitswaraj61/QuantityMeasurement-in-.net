@@ -18,31 +18,69 @@ namespace QuantityMeasurement
         //// <summary>
         //// Create Enum constants
         //// </summary>
-        public enum Unit { FEET ,INCH , YARD}
-        /// <summary>
-        //// convert value feet to inch declare global
-        //// </summary>
-        public const double FEET_TO_INCH = 12.0;
-        /// <summary>
-        //// convert value yard to inch declare global
-        //// </summary>
-        public const double YARD_TO_INCH = 36.0;
+        public enum Unit { FEET, INCH, YARD }
+
+
         //// <summary>
         //// declare global variable for double value
         //// </summary>
         public double value;
+
         //// <summary>
         //// declare global variable for double value
         //// </summary>
         public Unit unit;
+
         //// <summary>
         //// Create Parameterized Constructor
         //// </summary>
-        public Length(Unit unit ,double value)
+        public Length(Unit unit, double value)
         {
             this.unit = unit;
             this.value = value;
         }
+
+        public Length()
+        {
+
+        }
+
+        //// <summary>
+        //// Create switch statements for diffrent unit and return value
+        //// </summary>
+        private double GetUnitConversion(Unit unit)
+        {
+            switch (unit)
+            {
+                case Unit.FEET:
+                    return 12.0;
+                case Unit.INCH:
+                    return 1.0;
+                case Unit.YARD:
+                    return 36.0;
+            }
+            return 0;
+        }
+
+        //// <summary>
+        //// Create method to compare two diffrent unit and value
+        //// </summary>
+        public bool Compare(Length firstUnitValue, Length secondUnitValue)
+        {
+            double baseValue1 = GetUnitConversion(firstUnitValue.unit);
+            double baseValue2 = GetUnitConversion(secondUnitValue.unit);
+            return CompareUnits(firstUnitValue, secondUnitValue, baseValue1, baseValue2);
+        }
+
+
+        //// <summary>
+        //// Create method to compare unit and return results
+        //// </summary>
+        private bool CompareUnits(Length firstUnitValue, Length secondUnitValue, double baseValue1, double baseValue2)
+        {
+            return Math.Round(firstUnitValue.value * baseValue1).CompareTo(Math.Round(secondUnitValue.value * baseValue2)) == 0;
+        }
+
         //// <summary>
         //// override method to equals two objects
         //// </summary>
@@ -57,41 +95,13 @@ namespace QuantityMeasurement
             return length.value == value && unit == length.unit; ;
         }
         //// <summary>
-        ////  method to compare two objects
-        //// </summary>
-        public bool compare(Length that)
+        //// Overriding GetHashCode Method.
+       //// </summary>
+        //// <returns></returns>
+        public override int GetHashCode()
         {
-
-            if (this.unit.Equals(Unit.FEET) && that.unit.Equals(Unit.FEET) || this.unit.Equals(Unit.INCH) && that.unit.Equals(Unit.INCH))
-            {
-                return this.value.CompareTo(that.value) == 0;
-            }
-
-            if (this.unit.Equals(Unit.FEET) && that.unit.Equals(Unit.INCH))
-            {
-                return this.value * FEET_TO_INCH.CompareTo(that.value) == 0;
-            }
-            if (this.unit.Equals(Unit.INCH) && that.unit.Equals(Unit.FEET))
-            {
-                return (this.value / FEET_TO_INCH).CompareTo(that.value) == 0;
-            }
-            if (this.unit.Equals(Unit.YARD) && that.unit.Equals(Unit.FEET))
-            {
-                return (this.value * YARD_TO_INCH).CompareTo(that.value*FEET_TO_INCH) == 0;
-            }
-            if (this.unit.Equals(Unit.YARD) && that.unit.Equals(Unit.INCH))
-            {
-                return (this.value * YARD_TO_INCH).CompareTo(that.value) == 0;
-            }
-            if (this.unit.Equals(Unit.INCH) && that.unit.Equals(Unit.YARD))
-            {
-                return (this.value).CompareTo(that.value * YARD_TO_INCH) == 0;
-            }
-            if (this.unit.Equals(Unit.FEET) && that.unit.Equals(Unit.YARD))
-            {
-                return (this.value * FEET_TO_INCH).CompareTo(that.value * YARD_TO_INCH) == 0;
-            }
-            return false;
+            return base.GetHashCode();
         }
     }
 }
+      
