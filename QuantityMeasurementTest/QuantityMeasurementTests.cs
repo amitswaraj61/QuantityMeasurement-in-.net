@@ -407,5 +407,16 @@ namespace Tests
             bool compareCheck = length.Compare(kg, grams);
             Assert.IsTrue(compareCheck);
         }
+        //// <summary>
+        //// Test case = 7.2 Given 1 Tonne and 1000 kgs when Compared should return equal length
+        //// </summary
+        [Test]
+        public void Given1TonneAnd1000Kgs_WhenCompared_ShouldReturnEqual()
+        {
+            Length tonne = new Length(Length.Unit.TONNE, 1.0);
+            Length kgs = new Length(Length.Unit.KG, 1000.0);
+            bool compareCheck = length.Compare(tonne, kgs);
+            Assert.IsTrue(compareCheck);
+        }
     }
 }
