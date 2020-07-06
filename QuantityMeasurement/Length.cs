@@ -61,11 +61,11 @@ namespace QuantityMeasurement
                 case Unit.CENTIMETER:
                     return 0.4;
                 case Unit.GALLON:
-                    return 3780.0;
+                    return 3.78;
                 case Unit.LITRE:
-                    return 1000.0;
-                case Unit.MILLIMETER:
                     return 1.0;
+                case Unit.MILLIMETER:
+                    return 0.001;
             }
             return 0;
         }

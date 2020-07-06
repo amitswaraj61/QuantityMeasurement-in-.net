@@ -372,5 +372,16 @@ namespace Tests
             bool compareCheck = length.Compare(litre, ml);
             Assert.IsTrue(compareCheck);
         }
+        //// <summary>
+        //// Test case = 6.1 Given 1 gallon and 3.78 litres when addition should return 7.56 litres
+        //// </summary
+        [Test]
+        public void Given1GallonAnd3n78Litres_WhenAddition_ShouldReturnEqualResult()
+        {
+            Length gallon = new Length(Length.Unit.GALLON, 1.0);
+            Length litre = new Length(Length.Unit.LITRE, 3.78);
+            double addedResult = litre.Add(gallon, litre);
+            Assert.AreEqual(8.0, addedResult);
+        }
     }
 }
