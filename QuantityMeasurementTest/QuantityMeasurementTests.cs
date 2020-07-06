@@ -396,6 +396,7 @@ namespace Tests
             double addedResult = litre.Add(litre, ml);
             Assert.AreEqual(2.0, addedResult);
         }
+
         //// <summary>
         //// Test case = 7.1 Given 1 Kg and 1000 grams when Compared should return equal kgs
         //// </summary
@@ -429,7 +430,7 @@ namespace Tests
             Length tonne = new Length(Length.Unit.TONNE, 1.0);
             Length gm = new Length(Length.Unit.GRAM, 1000.0);
             double addedResult = length.Add(tonne, gm);
-            Assert.AreEqual(1001, addedResult, 0.0);
+            Assert.AreEqual(1001, addedResult);
         }
     }
 }
