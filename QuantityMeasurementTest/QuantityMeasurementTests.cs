@@ -432,5 +432,17 @@ namespace Tests
             double addedResult = length.Add(tonne, gm);
             Assert.AreEqual(1001, addedResult);
         }
+
+        //// <summary>
+        //// Test case = 8.1 Given 212 feh and 100 celsius when Compared should return equal
+        //// </summary
+        [Test]
+        public void Given212FehAnd100Cel_WhenCompared_ShouldReturnEqual()
+        {
+            Length feh = new Length(Length.Unit.FAHRENHEIT, 212.0);
+            Length cel = new Length(Length.Unit.CELSIUS, 100.0);
+            bool compareCheck = length.Compare(feh, cel);
+            Assert.IsTrue(compareCheck);
+        }
     }
 }
