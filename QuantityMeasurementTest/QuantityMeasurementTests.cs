@@ -361,5 +361,16 @@ namespace Tests
             bool compareCheck = length.Compare(gallon1, litre);
             Assert.IsTrue(compareCheck);
         }
+        //// <summary>
+        //// Test case = 5.2 Given 1 litre and 1000 ml when compared should return equal length
+        //// </summary
+        [Test]
+        public void Given1LitreAnd1000Ml_WhenCompared_ShouldReturnEqualLength()
+        {
+            Length litre = new Length(Length.Unit.LITRE, 1.0);
+            Length ml = new Length(Length.Unit.MILLIMETER, 1000.0);
+            bool compareCheck = length.Compare(litre, ml);
+            Assert.IsTrue(compareCheck);
+        }
     }
 }
