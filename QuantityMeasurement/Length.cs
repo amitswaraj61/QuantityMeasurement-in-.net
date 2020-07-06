@@ -18,7 +18,7 @@ namespace QuantityMeasurement
         //// <summary>
         //// Create Enum constants
         //// </summary>
-        public enum Unit { FEET, INCH, YARD }
+        public enum Unit { FEET, INCH, YARD , CENTIMETER }
 
 
         //// <summary>
@@ -58,6 +58,8 @@ namespace QuantityMeasurement
                     return 1.0;
                 case Unit.YARD:
                     return 36.0;
+                case Unit.CENTIMETER:
+                    return 0.4;
             }
             return 0;
         }

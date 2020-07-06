@@ -238,7 +238,7 @@ namespace Tests
         {
             Length yard = new Length(Length.Unit.YARD, 1.0);
             Length feet = new Length(Length.Unit.FEET, 3.0);
-            bool compareCheck = length.Compare(yard,feet);
+            bool compareCheck = length.Compare(yard, feet);
             Assert.IsTrue(compareCheck);
         }
 
@@ -289,5 +289,18 @@ namespace Tests
             bool compareCheck = length.Compare(yard, feet);
             Assert.IsTrue(compareCheck);
         }
+
+        //// <summary>
+        //// Test case = 3.1 Given 2 inch and 5 cm when compares should return equals length
+        //// </summary
+        [Test]
+        public void Given2InchAnd5Cm_WhenCompared_ShouldReturnEqualLength()
+        {
+            Length inch = new Length(Length.Unit.INCH, 2.0);
+            Length cm = new Length(Length.Unit.CENTIMETER, 5.0);
+            bool compareCheck = length.Compare(inch, cm);
+            Assert.IsTrue(compareCheck);
+        }
     }
 }
+   

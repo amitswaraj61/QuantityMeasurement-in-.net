@@ -8,3 +8,4 @@ C:\Users\Kis\source\repos\QuantityMeasurement\QuantityMeasurement\obj\Debug\netc
 C:\Users\Kis\source\repos\QuantityMeasurement\QuantityMeasurement\bin\Debug\netcoreapp2.1\QuantityMeasurement.pdb
 C:\Users\Kis\source\repos\QuantityMeasurement\QuantityMeasurement\obj\Debug\netcoreapp2.1\QuantityMeasurement.dll
 C:\Users\Kis\source\repos\QuantityMeasurement\QuantityMeasurement\obj\Debug\netcoreapp2.1\QuantityMeasurement.pdb
+C:\Users\Kis\source\repos\QuantityMeasurement\QuantityMeasurement\obj\Debug\netcoreapp2.1\QuantityMeasurement.csprojAssemblyReference.cache
